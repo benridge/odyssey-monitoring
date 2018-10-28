@@ -4,4 +4,4 @@ applications:
   memory: 768M
   instances: 1
   random-route: true
-  path: ./target/odyssey-monitoring-0.0.2.jar
+  path: ./target/odyssey-monitoring-0.0.3.jar
