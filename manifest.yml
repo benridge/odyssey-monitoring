@@ -5,3 +5,10 @@ applications:
   instances: 1
   random-route: true
   path: ./target/odyssey-monitoring-0.0.3.jar
+
+- name: prometheus
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/binary-buildpack.git
+  command: ./prometheus-2.5.0-rc.0.linux-amd64/prometheus --config.file=prometheus-cf.yml --web.listen-address=:${PORT} --web.enable-admin-api
+  memory: 1024M
+  random-route: true
