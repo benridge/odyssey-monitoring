@@ -7,13 +7,20 @@ applications:
   path: ./target/odyssey-monitoring-0.0.3.jar
 
 - name: prometheus-docker
-  memory: 768M
+  memory: 512M
   instances: 1
   random-route: true
   docker:
     image: benridge/prometheus:cf
 
-#binary version: requires having prometheus binary in /prometheus-2.5.0-rc.0.linux-amd64/.
+- name: grafana-docker
+  memory: 512M
+  instances: 1
+  random-route: true
+  docker:
+    image: grafana/grafana
+
+#prometheus binary version: requires having prometheus binary in /prometheus-2.5.0-rc.0.linux-amd64/.
 #Not using this as it requires keeping prometheus binary in source control.
 #- name: prometheus
 #  instances: 1
